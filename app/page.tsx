@@ -10,8 +10,6 @@ export default function LandingPage() {
 
   const handleGetStarted = () => {
     setIsLoading(true);
-
-    // Delay to let the loader be visible
     setTimeout(() => {
       router.push("/upload");
     }, 800);
@@ -25,10 +23,14 @@ export default function LandingPage() {
         </div>
       )}
 
-      <h1 className="text-8xl font-extrabold text-blue-600 mb-2 tracking-tight">
+      <h1
+        className="font-extrabold text-blue-600 mb-2 tracking-tight
+                   text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]"
+      >
         FotoFlex
       </h1>
-      <p className="text-2xl text-gray-500 dark:text-gray-400 mb-6 ">
+
+      <p className="text-xl text-gray-500 dark:text-gray-400 mb-6">
         AI Image Transformation
       </p>
 

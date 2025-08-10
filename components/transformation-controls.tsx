@@ -46,20 +46,26 @@ export default function TransformationControls() {
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Select Transformation
         </label>
+        
         <select
   value={selectedTransformation || ""}
   onChange={handleTransformationChange}
-  className="w-full mt-1 block pl-3 pr-10 py-2 border border-gray-300 bg-white rounded-lg shadow-sm
+  className="w-full max-w-full mt-1 block pl-3 pr-10 py-2 border border-gray-300 bg-white rounded-lg shadow-sm
              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm
-             transition duration-150 ease-in-out"
+             transition duration-150 ease-in-out break-words text-ellipsis"
 >
   <option value="">✨ Select a transformation</option>
   {transformationOptions.map((option) => (
-    <option key={option.id} value={option.id}>
+    <option
+      key={option.id}
+      value={option.id}
+      className="break-words"
+    >
       {option.name} — {option.description}
     </option>
   ))}
 </select>
+
 
         {selectedOption && (
           <p className="mt-2 text-sm text-gray-500">
