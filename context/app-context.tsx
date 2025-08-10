@@ -10,9 +10,13 @@ interface AppState {
   setSelectedTransformation: (transformation: string | null) => void;
   transformationParams: string;
   setTransformationParams: (params: string) => void;
+
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
 }
 
 const AppContext = createContext<AppState | undefined>(undefined);
+
 export default function AppProvider({
   children,
 }: {
@@ -23,6 +27,7 @@ export default function AppProvider({
     string | null
   >(null);
   const [transformationParams, setTransformationParams] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const contextValue = {
     uploadedImageUrl,
@@ -31,6 +36,8 @@ export default function AppProvider({
     setSelectedTransformation,
     transformationParams,
     setTransformationParams,
+    isLoading,
+    setIsLoading,
   };
 
   return (
