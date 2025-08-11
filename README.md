@@ -1,41 +1,72 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  FotoFlex — AI Image Transformation
 
-## Getting Started
+**FotoFlex** is a modern web app for uploading, transforming, and enhancing images using AI-ready image transformations (powered by ImageKit).  
+Built with **Next.js (App Router)**, **TypeScript**, **React**, **Tailwind CSS**, and **ImageKit** for uploads and transformations.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+##  Project overview
+
+FotoFlex lets users:
+- Upload images from the browser (drag & drop or file select)
+- Preview the original image
+- Choose from AI-style transformations (background remove, change background, etc.)
+- View the transformed result and download it
+
+State and UI flows are implemented with React + Context API and components are organized so uploader, preview, controls, and output are decoupled.
+
+---
+
+##  Features
+
+- Client-side drag & drop upload + file selector
+- Secure authenticated upload via ImageKit (server-signed token)
+- Real-time upload progress and success/error states
+- Original image preview & transformed image preview
+- Transformation controls (parameters, prompts for background change)
+- Loading UI and graceful UX on mobile and desktop
+- Tailwind CSS for responsive styling
+
+---
+
+##  Tech stack & key libraries
+
+- **Next.js (App Router)** — page routing, server routes
+- **React + TypeScript** — UI & logic
+- **Tailwind CSS** — utility-first styling
+- **PostCSS / Autoprefixer** — CSS pipeline
+- **imagekitio-react** — client library for direct uploads to ImageKit
+- **ImageKit (server-side)** — signing upload requests (private key only on server)
+- **Lucide React** — icons
+- **Context API** — global app state (uploaded URL, selected transformations, params, loading)
+- (Optional) **Vercel** — recommended hosting for Next.js
+
+---
+
+##  Project structure (important files)
+
 ```
+├── app/
+│ ├── page.tsx # Landing page (FotoFlex hero + Get Started)
+│ ├── upload/page.tsx # Upload & transformation UI (main flow)
+│ ├── api/
+│ │ └── auth/route.ts # Server route to sign ImageKit uploads
+│ └── layout.tsx # App layout + provider wrapper
+│
+├── components/
+│ ├── image-uploader.tsx # Upload widget: hidden IKUpload input + drag/drop UI
+│ ├── image-display-section.tsx # Shows original uploaded image
+│ ├── transformation-controls.tsx # Dropdown + parameter inputs for transformations
+│ ├── transformation-section.tsx # Contains controls + "Get Started"/apply buttons
+│ ├── transformed-image-section.tsx # Shows transformed image / download link
+│ └── render-loading.tsx # Full-screen or inline loading indicator
+│
+├── context/
+│ └── app-context.tsx # Context: uploadedImageUrl, selectedTransformation, params, isLoading
+├── public/ # public assets / favicon
+├── globals.css # Tailwind imports + CSS variables
+├── tailwind.config.js
+├── postcss.config.mjs
+├── package.json
+└── README.md
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# FotoFlex
-Ai Image Transformation
->>>>>>> eb285c2c4a0efaa6890f971f42b60d5b535bcd0a
