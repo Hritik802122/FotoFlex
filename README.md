@@ -1,4 +1,4 @@
-#  FotoFlex — AI Image Transformation
+#  FotoFlex — AI Image Transformation Tool
 
 **FotoFlex** is a modern web app for uploading, transforming, and enhancing images using AI-ready image transformations (powered by ImageKit).  
 Built with **Next.js (App Router)**, **TypeScript**, **React**, **Tailwind CSS**, and **ImageKit** for uploads and transformations.
