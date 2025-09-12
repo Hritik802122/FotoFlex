@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  
   "dependencies": {
     "@imagekit/next": "^2.1.2",
     "file-saver": "^2.0.5",
@@ -19,6 +20,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/file-saver": "^2.0.7",
