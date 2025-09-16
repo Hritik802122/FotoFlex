@@ -7,7 +7,7 @@ Built with **Next.js (App Router)**, **TypeScript**, **React**, **Tailwind CSS**
 
 ##  Project overview
 
-FotoFlex lets users:
+FotoFlex lets users:-
 - Upload images from the browser (drag & drop or file select)
 - Preview the original image
 - Choose from AI-style transformations (background remove, change background, etc.)
