@@ -10,6 +10,7 @@ interface AppState {
   setSelectedTransformation: (transformation: string | null) => void;
   transformationParams: string;
   setTransformationParams: (params: string) => void;
+  
 
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
